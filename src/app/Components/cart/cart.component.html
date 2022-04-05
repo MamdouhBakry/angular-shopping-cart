@@ -1,0 +1,91 @@
+<!-- Start Cart -->
+<div class="cart-wrapper">
+    <div class="cart-title">{{"Cart Items"| translate}}</div>
+    <div class="cart-items">
+        <div class="cart-item" *ngFor="let cart of cartItems">
+            <img src={{cart.imageUrl}} alt="cart.title" />
+            <div class="cart-info">
+                <div>
+                    <p>{{"cartTitle" | translate}} {{cart.title}}</p>
+                    <p>{{"cartQty"| translate}} {{cart.qty}}</p>
+                    <p>{{"price"| translate}}: ${{cart.price}}</p>
+                </div>
+                <button (click)="renoveFromCart(cart)">{{"reoveBtn"| translate}}</button>
+            </div>
+        </div>
+    </div>
+    <div class="cart-footer">
+        <div class="total">{{"total"| translate}} :${{calcTotal()}}</div>
+        <button (click)="setShowForm()">{{"selectProduct"| translate}}</button>
+    </div>
+</div>
+<!-- End Cart -->
+
+
+<!-- Start Checkout Form -->
+
+<div *ngIf="showForm" class="checkout-form">
+    <span (click)="setShowForm()" class="close-icon">&times;</span>
+    <form (ngSubmit)="submitOredr()">
+        <div>
+            <label>Name: </label>
+            <input type="text" [(ngModel)]="Name" name="name" />
+            {{Name}}
+        </div>
+        <div>
+            <label>Email: </label>
+            <input type="email" [(ngModel)]="Email" name="email" />
+            {{Email}}
+        </div>
+        <div>
+            <button type="submit" data-bs-toggle="modal" data-bs-target="#exampleModal2">Checkout</button>
+        </div>
+    </form>
+</div>
+<!-- End Checkout Form -->
+
+<!-- Start Order Model -->
+<div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModal2Label" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModal2Label">Order Items</h5>
+                <button (click)="setShowForm()" type="button" class="btn-close" data-bs-dismiss="modal"
+                    aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="order-info">
+                    <p class="alert-success">order done success</p>
+                    <table>
+                        <tr>
+                            <td>Name: </td>
+                            <td>{{Name}}</td>
+                        </tr>
+                        <tr>
+                            <td>Email: </td>
+                            <td>{{Email}}</td>
+                        </tr>
+                        <tr>
+                            <td>Total: </td>
+                            <td>${{calcTotal()}}</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="cart-data" *ngFor="let p of cartItems">
+                                    <p>Number of this product: {{p.qty}}</p>
+                                    <p>Title of product: {{p.title}}</p>
+                                    <hr>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button (click)="setShowForm()" type="button" class="btn btn-secondary"
+                    data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Order Model -->

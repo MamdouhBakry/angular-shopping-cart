@@ -1,0 +1,117 @@
+.cart-wrapper{
+    width:70%;
+    margin: 20px auto;
+    .cart-title{
+        border-bottom: 1px solid #333;
+        padding-bottom: 5px;
+    }
+}
+
+.cart-item{
+    display:flex;
+    justify-content:space-between;
+    align-items: center;
+    padding: 10px;
+    box-shadow: 2px 2px 3px #c0c0c0;
+    margin: 6px 0;
+    img{
+        width: 80px;
+        margin-right: 10px;
+    }
+    .cart-info{
+        display:flex;
+        justify-content:space-between;
+        align-items: center;
+        flex:1;
+    }
+}
+button{
+    border:1px solid #c0c0c0;
+    border-radius: 5px;
+    background-color: #2a5ea5;
+    color:#fff;
+    padding:5px;
+    display:inline-block;
+}
+.cart-footer{
+    display:flex;
+    justify-content:space-between;
+    align-items: center;
+    padding: 3px 0;
+    .total{
+        font-size: 25px;
+    }
+}
+
+.order-info{
+    display:flex;
+    flex-direction:column;
+    height:100%;
+    .alert-success{
+        background-color: green;
+        color:#fff;
+        padding: 10px;
+        text-align: center;
+        text-transform: capitalize;
+        margin-bottom: 20px;
+        margin-top: 20px;
+    }
+    .close-icon{
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    font-size: 20px;
+    cursor: pointer;
+}
+    table{
+        border: 1px solid #c0c0c0;
+        tr{
+            display:flex;
+            justify-content:space-between;
+            align-items: center;
+            border-bottom: 1px solid #c0c0c0;
+            td{
+                padding:10px;
+            }
+        }
+        tr:last-of-type{
+            border-bottom: 0;
+        }
+        
+    }
+}
+
+// Checkout
+
+.checkout-form{
+    position:fixed;
+    bottom:0;
+    left: 0;
+    width:100%;
+    padding: 30px;
+    background-color: #ddd;
+    form{
+        width:60%;
+        margin:auto;
+        > div{
+            display:flex;
+            flex-direction: column;
+            padding:10px;
+        }
+        input{
+            height:40px;
+            border: 1px solid #c0c0c0;
+        }
+        button{
+            cursor: pointer;
+            height: 40px;
+        }
+    }
+    .close-icon{
+        position:absolute;
+        right: 10px;
+        top:10px;
+        font-size: 25px;
+        cursor: pointer;
+    }
+}

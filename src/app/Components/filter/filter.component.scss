@@ -1,0 +1,27 @@
+.filter-wrapper{
+    display:flex;
+    padding: 30px 10px;
+    flex-direction: column;
+    .containerr{
+        border: 1px solid #c0c0c0;
+        .filter-title{
+            background-color:#2a5ea5;
+            padding:10px;
+            color:#fff;
+            margin-bottom: 20px;
+            width:inherit;
+        }
+        > div{
+            margin-bottom: 13px;
+            padding: 5px 20px;
+        }
+        select{
+            display:block;
+            width:100%;
+            height: 40px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+    }
+    
+}

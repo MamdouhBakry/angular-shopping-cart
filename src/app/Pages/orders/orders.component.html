@@ -1,0 +1,20 @@
+<table class="table table-striped">
+    <thead>
+        <tr class="text-center">
+            <th>Id</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Items</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr class="text-center" *ngFor="let order of ordersList; let i=index">
+            <td>{{i + 1}}</td>
+            <td>{{order.name}}</td>
+            <td>{{order.email}}</td>
+            <td *ngFor="let item of cartItems">
+                <p>{{item.title}} , {{item.qty}}</p>
+            </td>
+        </tr>
+    </tbody>
+</table>

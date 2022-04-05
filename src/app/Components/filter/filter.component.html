@@ -1,0 +1,26 @@
+<div class="filter-wrapper">
+    <div class="containerr">
+        <h2 class="filter-title">{{"Filter"| translate}}</h2>
+        <div class="num-of-products">{{"ProductsNumber"| translate}} {{(products.length)}}</div>
+        <div class="filter-by-size">
+            <span>{{"Filter"| translate}}</span>
+            <select (change)="selectSizeHandler($event)" class="filter-select">
+                <option value="ALL">ALL</option>
+                <option value="XS">XS</option>
+                <option value="S">S</option>
+                <option value="M">M</option>
+                <option value="L">L</option>
+                <option value="XL">XL</option>
+            </select>
+        </div>
+        <div class="filter-by-size">
+            <span>{{"Order"| translate}}</span>
+            <select (change)="selectSortHandler($event)" class="filter-select">
+                <option value="latest">Latest</option>
+                <option value="lower">Lower</option>
+                <option value="highest">Highest</option>
+            </select>
+        </div>
+    </div>
+
+</div>

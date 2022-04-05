@@ -1,0 +1,14 @@
+<div class="nav d-flex">
+    <ul>
+        <li>
+            <a class="nav-link" routerLink="/home" routerLinkActive="active">{{"Home"| translate}}</a>
+        </li>
+        <li>
+            <a class="nav-link" routerLink="/orders" routerLinkActive="active">{{"Orders"| translate}}</a>
+        </li>
+    </ul>
+    <div class="d-flex">
+        <button class="btn btn-primary me-2" (click)="translateToEn()">English</button>
+        <button class="btn btn-primary me-2" (click)="translateToAr()">عربي</button>
+    </div>
+</div>

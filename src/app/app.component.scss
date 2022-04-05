@@ -1,0 +1,14 @@
+.layout
+{
+    display: grid;
+    grid-template-areas: 
+    'header'
+    'main'
+    'footer';
+    height: 100%;
+    grid-template-rows: 50px 1fr 50px;
+}
+main{
+    grid-area: main;
+    height:100%;
+}
